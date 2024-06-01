@@ -1,0 +1,71 @@
+<!-- templates/about.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} About {% endblock title %}
+
+{% block content %}
+<style>
+    .about-container {
+        background-color: #f0f8ff;
+        padding: 50px;
+        border-radius: 15px;
+    }
+    .about-header {
+        color: #007BFF;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .developer-info {
+        color: #333;
+        font-size: 18px;
+    }
+    .image-container {
+        display: flex;
+        justify-content: center;
+        margin-top: -65px;
+        height: 370px;
+        margin-bottom: 0px;
+        
+    }
+    .product-info {
+        background-color: #e6f7ff;
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 10px;
+    }
+    .product-info h2 {
+        color: #28a745;
+    
+    }
+    .product-info p {
+        color: #555;
+    }
+</style>
+
+<div class="container about-container mt-5">
+    <h1 class="about-header">About Issue Tracker</h1>
+    <div class="row">
+        <div class="col-md-8 developer-info">
+            <p>Welcome to Issue Tracker! Our software is designed to help development teams efficiently manage and track issues in their projects. Whether you're a small startup or a large corporation, Issue Tracker simplifies the process of keeping tabs on project progress and task completion.</p>
+        </div>
+        <div class="col-md-4 image-container">
+            <img src="{% static 'img/AI.png' %}"  alt="Jennifer Navarro">
+        </div>
+    </div>
+    <div class="product-info">
+        <h2>What is Issue Tracker?</h2>
+        <p>Issue Tracker is a robust tool designed to streamline the process of issue management for software development teams. With Issue Tracker, you can easily create, update, and track the status of various issues within your projects.</p>
+        <p>Key features of Issue Tracker include:</p>
+        <ul>
+            <li>Creating new issues with default status set to "to do".</li>
+            <li>Updating issues to reflect their progress as "in progress" or "done".</li>
+            <li>Assigning priority levels to issues (low, medium, high).</li>
+            <li>Tracking who reported and who is assigned to each issue.</li>
+            <li>User authentication and role-based access control, ensuring that only authorized team members can create or view certain issues.</li>
+            <li>Team-based issue visibility, ensuring users only see issues relevant to their team.</li>
+        </ul>
+        <p>Issue Tracker is ideal for agile development environments and helps maintain a clear overview of project statuses, enhancing collaboration and productivity within your team.</p>
+    </div>
+</div>
+{% endblock content %}

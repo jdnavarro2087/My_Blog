@@ -1,0 +1,41 @@
+<!-- templates/edit_post.html -->
+{% extends 'base.html' %}
+{% block title %}Edit Post{% endblock title%}
+
+{% block content %}
+<style>
+    .edit-post-container {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 30px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        background-color: #f9f9f9;
+    }
+    .edit-post-header {
+        text-align: center;
+        margin-bottom: 30px;
+        color: #007BFF;
+    }
+    .form-control {
+        margin-bottom: 20px;
+    }
+    .btn-save {
+        width: 100%;
+        padding: 10px;
+        font-size: 18px;
+        background-color: #28a745;
+        border: none;
+        color: white;
+    }
+</style>
+
+<div class="container edit-post-container">
+    <h1 class="edit-post-header">Edit Post</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-success btn-save">Save</button>
+    </form>
+</div>
+{% endblock content %}

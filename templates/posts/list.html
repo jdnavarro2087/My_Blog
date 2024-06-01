@@ -1,0 +1,54 @@
+<!-- templates/posts.html -->
+{% extends 'base.html' %}
+{% block title %}Posts{% endblock title %}
+
+{% block content %}
+<style>
+    .posts-container {
+        max-width: 800px;
+        margin: 50px auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        background-color: #f9f9f9;
+    }
+    .posts-header {
+        text-align: center;
+        margin-bottom: 30px;
+        color: #007BFF;
+    }
+    .post-list {
+        list-style-type: none;
+        padding: 0;
+    }
+    .post-item {
+        padding: 15px;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #ddd;
+    }
+    .post-item:last-child {
+        border-bottom: none;
+    }
+    .post-title {
+        font-size: 20px;
+        font-weight: bold;
+        color: #007BFF;
+    }
+    .post-meta {
+        font-size: 14px;
+        color: #555;
+    }
+</style>
+
+<div class="container posts-container">
+    <h1 class="posts-header">All Posts</h1>
+    <ul class="post-list">
+        {% for post in object_list %}
+        <li class="post-item">
+            <a class="post-title" href="{% url 'detail' post.pk %}">{{ post.title }}</a>
+            <div class="post-meta">by {{ post.author }} on {{ post.created_on }}</div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock content %}

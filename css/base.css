@@ -1,0 +1,46 @@
+.navbar-nav .nav-item {
+  margin-right: 10px; /* Adjust spacing between links */
+}
+
+.navbar-nav .nav-link {
+  color: #333; /* Adjust link color */
+}
+
+.navbar-nav .nav-link:hover {
+  color: #555; /* Change link color on hover */
+}
+#nav{
+  display: flex;
+}
+#navbar-nav1{
+  display: flex;
+  justify-content: space-between;
+}
+  /* Custom CSS for Navbar */
+        .navbar {
+            background-color: #007bff; /* Blue background */
+        }
+
+        .navbar-brand {
+            color: #fff; /* White color for brand */
+        }
+
+        .navbar-toggler {
+            border-color: #fff; /* White color for toggle button */
+        }
+
+        .navbar-nav {
+            margin-left: auto; /* Move navbar links to the right */
+        }
+
+        .navbar-nav .nav-item {
+            margin-right: 10px; /* Add spacing between nav items */
+        }
+
+        .navbar-nav .nav-link {
+            color: #fff; /* White color for nav links */
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #ccc; /* Light grey color on hover */
+        }

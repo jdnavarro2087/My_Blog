@@ -1,0 +1,48 @@
+<!-- templates/new_post.html -->
+{% extends 'base.html' %}
+
+{% block title %} New Post {% endblock title %}
+
+{% block content %}
+<style>
+    .new-post-container {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 30px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        background-color: #f9f9f9;
+    }
+    .new-post-header {
+        text-align: center;
+        margin-bottom: 30px;
+        color: #007BFF;
+    }
+    .form-control {
+        margin-bottom: 20px;
+    }
+    .btn-save {
+        width: 100%;
+        padding: 10px;
+        font-size: 18px;
+    }
+    .image-preview {
+        display: block;
+        margin: 20px auto;
+        max-width: 100%;
+        height: auto;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+    }
+</style>
+
+<div class="container new-post-container">
+    <h1 class="new-post-header">Create a New Post</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-success btn-save">Save</button>
+    </form>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,52 @@
+<!-- templates/delete_post.html -->
+{% extends 'base.html' %}
+
+{% block title %}Delete Post{% endblock title %}
+
+{% block content %}
+<style>
+    .delete-post-container {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 30px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        background-color: #f9f9f9;
+        text-align: center;
+    }
+    .delete-post-header {
+        color: #dc3545;
+        margin-bottom: 20px;
+    }
+    .delete-post-message {
+        font-size: 18px;
+        color: #333;
+        margin-bottom: 30px;
+    }
+    .btn-delete {
+        background-color: #dc3545;
+        border-color: #dc3545;
+        color: white;
+        padding: 10px 20px;
+        font-size: 16px;
+        margin-right: 10px;
+    }
+    .btn-cancel {
+        background-color: #6c757d;
+        border-color: #6c757d;
+        color: white;
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+</style>
+
+<div class="container delete-post-container">
+    <h1 class="delete-post-header">Delete Post</h1>
+    <p class="delete-post-message">Are you sure you want to delete "{{ object.title }}"?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger btn-delete">Yes, delete</button>
+        <a href="{% url 'detail' object.pk %}" class="btn btn-secondary btn-cancel">Cancel</a>
+    </form>
+</div>
+{% endblock content %}

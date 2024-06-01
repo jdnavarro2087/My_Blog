@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block title %}User Management{% endblock title %}
+
+{% block content %}
+<style>
+    .user-management-container {
+        max-width: 800px;
+        margin: 50px auto;
+        padding: 30px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        background-color: #f9f9f9;
+    }
+    .user-list {
+        list-style: none;
+        padding: 0;
+    }
+    .user-item {
+        margin-bottom: 20px;
+        padding: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #fff;
+    }
+    .user-details {
+        margin-bottom: 10px;
+        font-size: 16px;
+        color: #333;
+    }
+    .user-actions {
+        display: inline-block;
+        margin-left: 10px;
+    }
+    .btn-delete {
+        background-color: #dc3545;
+        color: white;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 3px;
+        font-size: 14px;
+        text-decoration: none;
+    }
+    .btn-delete:hover {
+        background-color: #c82333;
+    }
+</style>
+
+<div class="container user-management-container">
+    <h1>User Management</h1>
+    <ul class="user-list">
+        {% for user in users %}
+        <li class="user-item">
+            <div class="user-details">
+                Username: {{ user.username }} <br>
+                Email: {{ user.email }}
+            </div>
+            <div class="user-actions">
+                <a href="{% url 'delete_user' user.id %}" class="btn btn-delete">Delete</a>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
